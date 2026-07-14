@@ -195,7 +195,7 @@ const isDarkMode = computed(() => isDark.value)
           </span>
           <br class="hidden sm:block" />
           <span :class="isDarkMode ? 'text-white' : 'text-gray-900'" class="block sm:inline text-2xl sm:text-5xl md:text-7xl lg:text-8xl">
-            ZOCLANCLOUNON K
+            ZOCLANCLOUNON
           </span>
         </h1>
       </div>
