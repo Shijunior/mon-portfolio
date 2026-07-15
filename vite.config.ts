@@ -5,6 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 import VueRouter from 'unplugin-vue-router/vite'
 import Layouts from 'vite-plugin-vue-layouts-next'
 import { VitePWA } from 'vite-plugin-pwa'
+import Components from 'unplugin-vue-components/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -18,6 +19,15 @@ export default defineConfig({
       defaultLayout: 'DefaultLayout',
     }),
     vue(),
+    Components({                         
+      dts: 'src/components.d.ts',
+      dirs: [
+        'src/layouts/components',
+        'src/modules', // scanne récursivement tous les modules
+      ],
+      extensions: ['vue'],
+      deep: true,
+    }),
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
